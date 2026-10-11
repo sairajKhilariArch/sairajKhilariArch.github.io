@@ -28,18 +28,6 @@ body {
   cursor: none;
 }
 
-body {
-  cursor: none;
-}
-
-a,
-button,
-.project,
-.card,
-.tags span {
-  cursor: pointer;
-}
-
 a,
 button,
 .project,
@@ -51,35 +39,14 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--orange);
   outline-offset: 3px;
+  border-radius: 6px;
 }
 
 #three-bg {
   position: fixed;
   inset: 0;
   z-index: -2;
-}
-
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.14),
-    rgba(249, 115, 22, 0.06) 45%,
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.2s ease;
-}
-
-.cursor-glow.hovering {
-  opacity: 1.4;
+  display: block;
 }
 
 .navbar {
@@ -120,6 +87,8 @@ button:focus-visible {
 }
 
 main {
+  position: relative;
+  z-index: 2;
   max-width: 1100px;
   margin: auto;
   padding: 7rem clamp(1rem, 5vw, 2rem) 4rem;
@@ -205,7 +174,9 @@ main {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 h1 {
@@ -290,6 +261,10 @@ h2 {
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.project {
+  margin-bottom: 1rem;
+}
+
 .project:hover,
 .card:hover {
   border-color: rgba(249, 115, 22, 0.65);
@@ -304,13 +279,6 @@ button:active {
   transform: scale(0.98);
 }
 
-.card:hover,
-.project:hover {
-  transform: translateY(-3px);
-  border-color: rgba(249, 115, 22, 0.5);
-  box-shadow: 0 0 35px rgba(249, 115, 22, 0.12);
-}
-
 .card h3,
 .project h3 {
   font-family: var(--mono);
@@ -322,10 +290,6 @@ button:active {
 .project p {
   color: var(--muted);
   line-height: 1.65;
-}
-
-.project {
-  margin-bottom: 1rem;
 }
 
 .project-head {
@@ -371,51 +335,23 @@ button:active {
 }
 
 footer {
+  position: relative;
+  z-index: 2;
   padding: 2rem;
   text-align: center;
   color: var(--muted);
   border-top: 1px solid var(--border);
 }
 
-@media (max-width: 700px) {
-  .navbar nav {
-    display: none;
-  }
-
+@media (hover: none) {
   body {
     cursor: auto;
   }
 
-  .cursor-glow {
-    display: none;
+  a,
+  button,
+  .project,
+  .card {
+    cursor: pointer;
   }
-}
-
-a,
-button,
-.project,
-.card {
-  transition: transform 0.2s ease, border-color 0.2s ease,
-    box-shadow 0.2s ease, background 0.2s ease;
-}
-
-a:hover,
-button:hover {
-  color: var(--orange);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.project:hover,
-.card:hover {
-  border-color: rgba(249, 115, 22, 0.65);
-  box-shadow: 0 0 30px rgba(249, 115, 22, 0.16);
-  transform: translateY(-3px);
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--orange);
-  outline-offset: 3px;
-  border-radius: 6px;
 }
