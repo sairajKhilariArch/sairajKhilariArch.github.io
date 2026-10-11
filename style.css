@@ -25,12 +25,32 @@ body {
   color: var(--text);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
-  cursor: auto;
+  cursor: none;
+}
+
+body {
+  cursor: none;
 }
 
 a,
-button {
+button,
+.project,
+.card,
+.tags span {
   cursor: pointer;
+}
+
+a,
+button,
+.project,
+.card {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><circle cx='14' cy='14' r='9' fill='none' stroke='%238b5cf6' stroke-width='2'/><circle cx='14' cy='14' r='2.5' fill='%23f97316'/></svg>") 14 14, pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
 }
 
 #three-bg {
