@@ -43,21 +43,23 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 22px;
-  height: 22px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.9), rgba(249, 115, 22, 0.25) 60%, transparent 70%);
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.55);
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.14),
+    rgba(249, 115, 22, 0.06) 45%,
+    transparent 70%
+  );
   pointer-events: none;
-  z-index: 999;
+  z-index: 1;
   transform: translate(-50%, -50%);
-  transition: width 0.15s ease, height 0.15s ease, opacity 0.15s ease;
+  transition: opacity 0.2s ease;
 }
 
 .cursor-glow.hovering {
-  width: 42px;
-  height: 42px;
-  opacity: 0.9;
+  opacity: 1.4;
 }
 
 .navbar {
