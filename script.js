@@ -32,7 +32,6 @@ const typedLines = [
 
 const asciiElement = document.getElementById("archAscii");
 const typedElement = document.getElementById("typedText");
-const cursorGlow = document.getElementById("cursorGlow");
 
 let asciiIndex = 0;
 
@@ -69,14 +68,6 @@ function typeCommand(lineIndex, charIndex) {
 }
 
 typeAscii();
-
-document.addEventListener("mousemove", (event) => {
-  cursorGlow.style.left = `${event.clientX}px`;
-  cursorGlow.style.top = `${event.clientY}px`;
-
-  const target = event.target.closest("a, button");
-  cursorGlow.classList.toggle("hovering", Boolean(target));
-});
 
 const canvas = document.getElementById("three-bg");
 const renderer = new THREE.WebGLRenderer({
