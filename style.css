@@ -18,10 +18,11 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
@@ -45,8 +46,9 @@ button:focus-visible {
 #three-bg {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   display: block;
+  pointer-events: none;
 }
 
 .navbar {
