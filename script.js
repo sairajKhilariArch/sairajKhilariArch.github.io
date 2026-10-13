@@ -28,6 +28,18 @@
   // Filter project cards by topic
   const filterButtons = [...document.querySelectorAll(".filter-button")];
   const projectCards = [...document.querySelectorAll(".project-card")];
+
+  // Clicking the body of a project card opens that project's online page.
+  // The explicit project link remains a regular anchor for keyboard and screen-reader users.
+  projectCards.forEach(card => {
+    const url = card.dataset.projectUrl;
+    if (!url) return;
+
+    card.addEventListener("click", event => {
+      if (event.target.closest("a, button")) return;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  });
   filterButtons.forEach(button => button.addEventListener("click", () => {
     const filter = button.dataset.filter;
     filterButtons.forEach(item => {
